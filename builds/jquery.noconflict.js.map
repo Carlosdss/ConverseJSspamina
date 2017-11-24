@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/jquery.noconflict.js"],"names":["define","jq","noConflict"],"mappings":";;AAAA;AACAA,OAAO,CAAC,QAAD,CAAP,EAAmB,UAAUC,EAAV,EAAc;AAC7B,WAAOA,GAAGC,UAAH,CAAe,IAAf,CAAP;AACH,CAFD","file":"jquery.noconflict.js","sourcesContent":["/*global define */\ndefine(['jquery'], function (jq) {\n    return jq.noConflict( true );\n});\n"]}

@@ -1,0 +1,219 @@
+#conversejs #converse-roster {
+    text-align: left;
+    width: 100%;
+    position: relative;
+    margin: 1em 0 0 0;
+    height: $roster-height;
+    height: calc(100% - #{$controlbox-dropdown-height*2} - 20px);
+    overflow: hidden;
+    padding: 0;
+    padding-bottom: 3em;
+
+    &.no-contact-requests {
+        height: calc(100% - #{$controlbox-dropdown-height} - 20px);
+    }
+
+    /* Custom addition for CSP */
+    #online-count {
+        display: none;
+    }
+
+    .search-xmpp {
+        ul {
+            li.chat-info {
+                padding-left: 10px;
+            }
+        }
+    }
+
+    .roster-filter-form {
+        margin: 0 0 0.5em 0;
+        width: 100%;
+        .roster-filter {
+            float: left;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABNSURBVHjaXI7BDcAwCAMvyQjMyQ6dAbZiKfqoUK34g2zJh1dENIC7M8pMAPYdzAVY3d0ajNz9aypS/b5R6o+ZPdqoKgCq6h80KH3xDgBqNR97p8oAGQAAAABJRU5ErkJggg== ) no-repeat right -20px center;
+            border: 1px solid #999;
+            font-size: $font-size;
+            height: $controlbox-dropdown-height;
+            margin: 0;
+            padding: 0;
+            padding-left: 0.4em;
+            width: 53%;
+        }
+        /* (jQ addClass:) if input has value: */
+        .roster-filter.x {
+            background-position: right 3px center;
+        }
+        /* (jQ addClass:) if mouse is over the 'x' input area*/
+        .roster-filter.onX {
+            cursor: pointer;
+        }
+        .roster-filter-state {
+            display: none;
+        }
+        .state-type {
+            float: left;
+            border: 1px solid #999;
+            font-size: calc(#{$font-size} - 2px);
+            height: $controlbox-dropdown-height;
+            margin: 0;
+            padding: 0;
+            padding-left: 0.4em;
+            width: 53%;
+            display: none;
+        }
+        .state-type-state {
+            display: inline-block;
+        }
+        .filter-type {
+            display: table-cell;
+            float: right;
+            font-size: calc(#{$font-size} - 2px);
+            height: $controlbox-dropdown-height;
+            padding: 0;
+            width: 47%;
+            border-radius: 0;
+            border: 1px solid;
+        }
+    }
+
+    .roster-contacts {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        display: none;
+        dt.roster-group {
+            border: none;
+            color: $text-color;
+            display: none;
+            font-weight: normal;
+            margin: 1em 0 0.5em 0;
+            text-shadow: 0 1px 0 $text-shadow-color;
+            .group-toggle {
+                &:hover {
+                    color: $dark-gray-color;
+                }
+                color: $text-color;
+                display: block;
+                width: 100%;
+            }
+        }
+        dd {
+            border: none;
+            clear: both;
+            color: $text-color;
+            display: block;
+            height: 24px;
+            overflow-y: hidden;
+            text-shadow: 0 1px 0 $text-shadow-color;
+            line-height: $font-size;
+            width: 100%;
+            height: 30px;
+            margin: 0;
+            padding: 0.5em 0 0 0;
+
+            a:hover {
+                color: $dark-link-color;
+            }
+
+            .open-chat {
+                margin: auto;
+                padding: 0;
+                width: 85%;
+                &.unread-msgs {
+                    font-weight: bold;
+                    .contact-name {
+                        width: 70%;
+                    }
+                }
+
+				.msgs-indicator {
+                    background-color: $chat-head-color;
+                    opacity: 1;
+                    border-radius: 10%;
+                    padding: 0 0.2em;
+                    font-size: $font-size-small;
+				}
+
+                .contact-name {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    padding: 0;
+                    margin: 0;
+                    max-width: 80%;
+                    float: none;
+                    height: $roster-item-height;
+                    &.unread-msgs {
+                        max-width: 60%;
+                    }
+                }
+
+                .avatar {
+                    float: left;
+                    display: inline-block;
+                    height: $roster-item-height;
+                }
+            }
+            &.requesting-xmpp-contact {
+                .request-actions {
+                    padding: 0 0 0 0.3em;
+                    float: right;
+                }
+                .open-chat {
+                    max-width: 70%;
+                    .req-contact-name {
+                        width: 100%;
+                    }
+                }
+                .req-contact-name {
+                    line-height: $line-height;
+                    width: 69%;
+                    padding: 0;
+                }
+            }
+            &.current-xmpp-contact span {
+                font-size: $font-size;
+                float: left;
+                margin-right: 0.5em;
+            }
+            &.odd {
+                background-color: #DCEAC5;
+                /* Make this difference */
+            }
+            a, span {
+                display: inline-block;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            span {
+                padding: 0;
+                height: 100%;
+            }
+            a {
+                &.decline-xmpp-request {
+                    margin-left: 5px;
+                }
+                &.remove-xmpp-contact {
+                    font-size: $font-size-tiny;
+                    float: right;
+                    margin: 0;
+                    padding: 0;
+                    color: $subdued-color;
+                    &:hover {
+                        color: $gray-color;
+                    }
+                }
+            }
+        }
+    }
+    span {
+        &.pending-contact-name {
+            line-height: $line-height;
+            width: 100%;
+        }
+    }
+}

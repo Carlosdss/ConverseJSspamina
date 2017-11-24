@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/backbone.noconflict.js"],"names":["define","Backbone","noConflict"],"mappings":";;AAAA;AACAA,OAAO,CAAC,UAAD,CAAP,EAAqB,UAAUC,QAAV,EAAoB;AACrC,WAAOA,SAASC,UAAT,EAAP;AACH,CAFD","file":"backbone.noconflict.js","sourcesContent":["/*global define */\ndefine(['backbone'], function (Backbone) {\n    return Backbone.noConflict();\n});\n"]}

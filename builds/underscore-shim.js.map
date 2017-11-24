@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/underscore-shim.js"],"names":["define","_","noConflict"],"mappings":";;AAAA;AACAA,OAAO,CAAC,QAAD,CAAP,EAAmB,UAAUC,CAAV,EAAa;AAC5B,WAAOA,EAAEC,UAAF,EAAP;AACH,CAFD","file":"underscore-shim.js","sourcesContent":["/*global define */\ndefine(['lodash'], function (_) {\n    return _.noConflict();\n});\n"]}
